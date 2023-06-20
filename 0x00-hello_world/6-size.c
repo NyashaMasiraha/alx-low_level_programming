@@ -1,8 +1,10 @@
 #include <stdio.h>
+
 /**
 *main - A program that prints various size and types on computer
 *Return:0 (Success)
 */
+
 int main(void)
 {
 	char a;
