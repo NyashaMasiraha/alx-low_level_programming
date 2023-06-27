@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - prints first 50 fibonacci number starting with 1 and 2 seperated by a comma followed by space
+ * main - print first 50 fibonacci numbers seperated by comma followed space
  * return: Always 0
  */
 
@@ -14,7 +14,7 @@ int main(void)
 		sum = fib1 + fib2;
 		printf("%lu", sum);
 
-		fib1 = fib2 :
+		fib1 = fib2;
 		fib2 = sum;
 
 		if (count == 49)
