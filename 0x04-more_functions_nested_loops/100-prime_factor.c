@@ -12,7 +12,6 @@ int main(void)
 	long int n;
 	long int max;
 	long int i;
-	long int sqrt;
 
 	n = 612852475143;
 	max = -1;
