@@ -1,4 +1,4 @@
-#include "mnain.h"
+#include "main.h"
 
 /**
  * reset_to_98 - program that takes a pointer to an int as parameter
