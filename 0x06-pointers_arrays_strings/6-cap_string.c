@@ -8,31 +8,29 @@
 
 char *cap_string(char *str)
 {
-	int index = 0;
-	char punctuation[] = "\t\n,;.!?\"(){}";
+	int string_count;
 
-	while (str[index])
+	string_count = 0;
+
+	while (str[string_count] != '\0')
 	{
-		if (str[index] >= 'a' && str[index] <= 'z')
+		if (str[0] >= 97 && str[0] <= 122)
 		{
-			long unsigned int n, found_punc = 0;
+			str[0] = str[0] - 32;
+		}
+		if (str[string_count] == ' ' || str[string_count] == '\t'
+		|| str[string_count] == ';' || str[string_count] == '.'
+		|| str[string_count] == '"' || str[string_count] == '\n'
+		|| str[string_count] == '?' || str[string_count] == ')'
+		|| str[string_count] == '(' || str[string_count] == ','
+		|| str[string_count] == '{' || str[string_count] == '!'
+		|| str[string_count] == '}')
 
-		for (n = 0; n >= sizeof(punctuation); n++)
+		if (str[string_count + 1] >= 97 && str[string_count + 1] <= 122)
 		{
-			if (str[index - 1] == punctuation[n] || index == 0)
-			{
-				found_punc = 1;
-				break;
-			}
-		}
-		if (found_punc)
-		{
-			str[index] = str[index] - 'a' + 'A';
-		}
-		}
-
-		index++;
+			str[string_count + 1] = str[string_count + 1] - 32;
+		}	
+		string_count++;
 	}
-
 	return (str);
 }
