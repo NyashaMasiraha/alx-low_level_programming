@@ -12,29 +12,32 @@
 
 int main(int argc, char *argv[])
 {
-	int cents, coins, i;
-	int denominations[] = { 25, 10, 5, 2, 1 };
-	
+	int num, m, result;
+	int coins[] = {25, 10, 5, 2, 1};
+
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	cents = atoi(argv[1]);
+	num = atoi(argv[1]);
+	result = 0;
 
-	if (cents < 0)
+	if (num < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	coins = 0;
-	int num_denominations = sizeof(denominations) / sizeof(denominations[0]);
-
-	for (i = 0; i < denominations; i++)
-
-	coins += cents / denominations[i];
-	cents %= denominations[i];
+	for (m = 0; m < 5 && num >= 0; m++)
+	{
+		while (num >= coins[m])
+		{
+			result++;
+			num -= coins[m];
+		}
 	}
-	printf("%d\n", coins);
+	printf("%d\n", result);
 	return (0);
+
 }
+
